@@ -15,12 +15,12 @@ class Solution:
         :type target: int
         :rtype: List[int]
         """
-        for (index, select_num) in enumerate(nums):
-            need_num = target - select_num
-            if need_num in nums:
-                need_index = nums.index(need_num)
-                if need_index != index:
-                    return [index, need_index]
+        dic = {}
+        for i, num in enumerate(nums):
+            if num in dic:
+                return [dic[num], i]
+            else:
+                dic[target - num] = i
 
 
 A = Solution()
