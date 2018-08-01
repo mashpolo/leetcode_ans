@@ -8,36 +8,15 @@
 """
 
 
-class Solution:
-    def reverse(self, num):
-        max_num = 2**31 - 1
-        min_num = -2**31
-
-        # 小于0的负数
-        if num != 0:
-            ans_abs = str(abs(num))[::-1]
-            ans_str = ""
-            for (x, y) in enumerate(ans_abs):
-                if x == 0 and y == '0':
-                    continue
-                elif x > 0 and ans_abs[x-1] == '0' and ans_abs == '0' and y == '0':
-                    continue
-                else:
-                    ans_str += y
-                # print(ans_str)
-            if num < 0:
-                ans = 0 - int(ans_str)
-            else:
-                ans = int(ans_str)
-
-        else:
-            ans = 0
-
-        if ans > max_num or ans < min_num:
-            return 0
-        else:
-            return ans
+class Solution(object):
+    def reverse(self, x):
+        """
+        :type x: int
+        :rtype: int
+        """
+        x = int(str(x)[::-1]) if x >= 0 else - int(str(-x)[::-1])
+        return x
 
 
 test_obj = Solution()
-print(test_obj.reverse(-2147483648))
+print(test_obj.reverse(12422634547))
