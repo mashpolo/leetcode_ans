@@ -22,3 +22,21 @@
 ## 解决思路：
 1. 因为需要在原数组上进行修改，所以应该利用while循环
 2. 每次判断前后两个值是否一样，删除后面的，继续判断；如果不一样，两个索引分别加1
+
+## 最优解
+
+```python
+class Solution:
+    def removeDuplicates(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        i = 0
+        while i < len(nums)-1:
+            if nums[i] == nums[i+1]:
+                nums.remove(nums[i])
+            else:
+                i += 1
+        return len(nums)
+```
