@@ -31,3 +31,20 @@
 1. 迭代的方式，从2开始，依次往上类加，直到和n相等
 2. while循环每次保存上一次的报数结果
 3. for循环读取上次的报数结果，返回下一次的报数值
+
+
+## 最优解
+> itertools的group_by方法可以返回一个字符串中每次重复的有多少个
+
+```python
+class Solution(object):
+    def countAndSay(self, n):
+        """
+        :type n: int
+        :rtype: str
+        """
+        res = '1'
+        for i in range(n-1):
+            res = ''.join([str(len(list(group))) + digit for digit, group in itertools.groupby(res)])
+        return res
+```
