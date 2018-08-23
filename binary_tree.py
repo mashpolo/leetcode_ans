@@ -43,7 +43,6 @@ class Tree(object):
         print(root.val)
         self.front_sort(root.left)
         self.front_sort(root.right)
-        end = time.time()
 
     def front_sort_stack(self, root):
         """使用栈的数据结构来保存每次遍历的节点"""
