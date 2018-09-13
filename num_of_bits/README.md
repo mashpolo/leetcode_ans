@@ -32,3 +32,18 @@ class Solution(object):
         """
         return len(bin(n)[2:].replace('0', ''))
 ```
+
+3. 通过位运算，每次右移一位，在使用&运算来加一
+```python
+class Solution(object):
+    def hammingWeight(self, n):
+        """
+        :type n: int
+        :rtype: int
+        """
+        count = 0
+        while n:
+            count += n&1
+            n >>= 1
+        return count
+```
