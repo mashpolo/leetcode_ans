@@ -1,2 +1,2 @@
 # leetcode_ans
-ans for leetcode on python
+ans for leetcode by using python
