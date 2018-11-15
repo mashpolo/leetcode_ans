@@ -14,6 +14,10 @@
 注意: 输入范围是 [-1e7, 1e7] 。
 ```
 
+
+## 解决思路：
+1. 直接除7求余数，然后反转得到的数即可
+
 ```python
 class Solution(object):
     def convertToBase7(self, num):
