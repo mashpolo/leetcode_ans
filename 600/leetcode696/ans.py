@@ -18,6 +18,7 @@ class Solution:
         prev_length = 0
         cur_length = 1
         for i in range(1, len(s)):
+            print(s[i], s[i-1])
             if s[i] == s[i - 1]:
                 cur_length += 1
             else:
@@ -25,6 +26,7 @@ class Solution:
                 cur_length = 1
             if prev_length >= cur_length:
                 result += 1
+            print(result)
         return result
 
 
