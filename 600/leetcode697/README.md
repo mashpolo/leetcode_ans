@@ -29,7 +29,6 @@ nums[i] 是一个在0到49,999范围内的整数。
 
 
 ### 最优解
-
 ```python
 import collections
 class Solution(object):
