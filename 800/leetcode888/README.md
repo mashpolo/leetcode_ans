@@ -47,7 +47,7 @@ class Solution:
     def fairCandySwap(self, A: List[int], B: List[int]) -> List[int]:
         poor = abs(sum(B) - sum(A))
         min_num = A if sum(A) < sum(B) else B
-        max_num = set(A) if sum(A) > sum(B) else set(A)
+        max_num = set(A) if sum(A) > sum(B) else set(B)
         if poor & 1:
             return []
         comb = poor // 2
