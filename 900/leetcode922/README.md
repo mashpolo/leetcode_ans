@@ -35,4 +35,17 @@ class Solution:
         ou = [i for i in A if i % 2]
         ji = [i for i in A if not i % 2]
         return [i for n in zip(ji, ou) for i in n]
+
+
+# another way
+class Solution:
+    def sortArrayByParityII(self, A):
+        """
+        :type A: List[int]
+        :rtype: List[int]
+        """
+        ans = A[:]
+        ans[::2] = [a for a in A if a%2==0]
+        ans[1::2] = [a for a in A if a%2]
+        return ans
 ```
