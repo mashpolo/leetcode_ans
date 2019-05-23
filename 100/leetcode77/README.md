@@ -22,3 +22,26 @@
 ## 解决办法：
 1. itertools的combinations函数可以直接解决掉这个问题，使用回溯的办法来解决
 2. 直接采用递归的方法来解决组合问题，C(m,n)=C(m-1,n)+C(m-1,n-1)
+
+```python
+class Solution(object):
+    def combine(self, n, k):
+        """
+        :type n: int
+        :type k: int
+        :rtype: List[List[int]]
+        """
+        if k>n or k==0:
+            return []
+        if k==1:
+            return [[i] for i in range(1,n+1)]
+        if k==n:
+            return [[i for i in range(1,n+1)]]
+
+        answer=self.combine(n-1,k)
+        for item in self.combine(n-1,k-1):
+            item.append(n)
+            answer.append(item)
+
+        return answer
+```
