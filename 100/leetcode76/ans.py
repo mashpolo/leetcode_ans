@@ -29,11 +29,14 @@ class Solution:
                 t_len -= 1
             mem[c] -= 1
 
+            print(mem)
             if t_len == 0:
+                print(i,j)
                 while (s[i] not in t_uniq) or (mem[s[i]] < 0):
                     if mem[s[i]] < 0:
                         mem[s[i]] += 1
                     i += 1
+                print(i,j)
                 if (minr - minl) > (j - i):
                     minl, minr = i, j
                 mem[s[i]] += 1
